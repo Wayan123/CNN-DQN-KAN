@@ -1,2 +1,2 @@
-# CNN-DQN-KAN-
+# CNN-DQN-KAN
 Test
