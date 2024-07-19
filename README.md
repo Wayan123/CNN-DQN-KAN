@@ -8,7 +8,7 @@ Pada kode ini saya mencoba untuk melihat performa yang dihasilkan oleh Kolmogoro
 
 Kode ini dikhususkan untuk dijalankan pada Kaggle dan juga sumber asli kode berasal dari link kaggle berikut https://www.kaggle.com/code/kingjuno/dqn-atari-pytorch. Pengembangan kode CNN-DQN-KAN dari repository berikut https://github.com/jakariaemon/CNN-KAN. 
 
-Hasil plotting training:
+*Hasil plotting training:*
 
 ![Deskripsi gambar](images/1.png)
 
