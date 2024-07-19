@@ -20,7 +20,7 @@ Hasil plotting training:
 
 Hasil gif
 
-![Deskripsi gambar](images/1.png)
+![gif](video/gym_animation-mlp.gif)
 
 ## Analisis Perbandingan
 
