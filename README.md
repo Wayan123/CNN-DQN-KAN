@@ -21,8 +21,8 @@ Hasil plotting training:
 Hasil gif
 
 ![gif](video/gym_animation-mlp.gif)
-![gif](video/gym_animation-kan-relu.gif)
-![gif](video/gym_animation-kan-selu.gif)
+![gif](video/gym_animation_kan_relu.gif)
+![gif](video/gym_animation_kan_selu.gif)
 
 ## Analisis Perbandingan
 
