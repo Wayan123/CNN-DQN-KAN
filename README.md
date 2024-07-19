@@ -1,27 +1,27 @@
 # CNN-DQN-KAN for Atari Games
 
-Deep Q-Networks (DQN) adalah salah satu algoritma reinforcement learning yang menggabungkan Q-Learning dengan jaringan saraf tiruan, menawarkan cara yang efektif untuk menangani lingkungan yang kompleks seperti game Atari. DQN menjadi alternatif yang kuat untuk Q-Learning konvensional, dengan kemampuan untuk belajar dari representasi visual yang tinggi menggunakan jaringan saraf dalam.
+Deep Q-Networks (DQN) is a reinforcement learning algorithm that combines Q-learning with artificial neural networks. It offers an effective way to handle complex environments such as Atari games. DQN is a strong alternative to conventional Q-learning, with the ability to learn from high-dimensional visual representations using deep neural networks.
 
-Dalam proyek ini, saya mencoba untuk mengevaluasi performa yang dihasilkan oleh Kolmogorov Arnold Networks (KAN) ketika digabungkan dengan CNN-DQN pada kasus game Atari. KAN adalah alternatif dari Multi-Layer Perceptron (MLP) yang dapat diterapkan pada berbagai arsitektur jaringan saraf sebagai pengganti MLP. Dalam kode ini, saya membuat empat kombinasi sebagai berikut:
+In this project, I attempt to evaluate the performance of Kolmogorov Arnold Networks (KAN) when combined with CNN-DQN for Atari games. KAN is an alternative to the Multi-Layer Perceptron (MLP) that can be applied to various neural network architectures as a substitute for MLP. In this code, I created four combinations as follows:
 
-1. **CNN-DQN-MLP (ReLU)**: Fully Connected Layer menggunakan MLP dengan fungsi aktivasi ReLU.
-2. **CNN-DQN-KAN (ReLU)**: Fully Connected Layer menggunakan KAN dengan fungsi aktivasi ReLU.
-3. **CNN-DQN-MLP (SELU)**: Fully Connected Layer menggunakan MLP dengan fungsi aktivasi SELU.
-4. **CNN-DQN-KAN (SELU)**: Fully Connected Layer menggunakan KAN dengan fungsi aktivasi SELU (Hasil Terbaik).
+1. **CNN-DQN-MLP (ReLU)**: The fully connected layer uses MLP with ReLU activation function.
+2. **CNN-DQN-KAN (ReLU)**: The fully connected layer uses KAN with ReLU activation function.
+3. **CNN-DQN-MLP (SELU)**: The fully connected layer uses MLP with SELU activation function.
+4. **CNN-DQN-KAN (SELU)**: The fully connected layer uses KAN with SELU activation function (Best Result).
 
-Kode ini dirancang untuk dijalankan di Kaggle, dengan sumber asli kode dari [link Kaggle berikut](https://www.kaggle.com/code/kingjuno/dqn-atari-pytorch). Pengembangan kode CNN-DQN-KAN berasal dari [repository berikut](https://github.com/jakariaemon/CNN-KAN).
+This code is designed to be run on Kaggle, with the original source code from [this Kaggle link](https://www.kaggle.com/code/kingjuno/dqn-atari-pytorch). CNN-DQN-KAN code is developed from [this repository](https://github.com/jakariaemon/CNN-KAN).
 
-Hasil plotting training:
+Training results:
 
-![Deskripsi gambar](images/1.png)
+![Description of the image](images/1.png)
 
-![Deskripsi gambar](images/2.png)
+![Description of the image](images/2.png)
 
-![Deskripsi gambar](images/3.png)
+![Description of the image](images/3.png)
 
-![Deskripsi gambar](images/4.png)
+![Description of the image](images/4.png)
 
-Hasil GIF:
+GIF Results:
 1. **gym_animation-mlp**
 
    ![gif](video/gym_animation-mlp.gif)
@@ -34,34 +34,34 @@ Hasil GIF:
 
    ![gif](video/gym_animation_kan_selu.gif)
 
-## Analisis Perbandingan
+## Comparison Analysis
 
-**Note:** Semua model hanya dilatih sekali, kecuali model CNN DQN - MLP (SELU) yang dilatih dua kali untuk memastikan apakah ada perubahan performa. Fungsi aktivasi SELU digunakan tanpa inisialisasi LeCun. Hasil ini hanya untuk eksperimen iseng, bukan eksperimen serius. :D
+**Note:** All models were trained only once, except for the CNN DQN - MLP (SELU) model, which was trained twice to ensure no performance change. The SELU activation function was used without LeCun initialization. These results are just for fun, not a serious experiment. :D
 
-1. **Performa Reward:**
-   - **DQN-MLP (ReLU):** Menunjukkan reward yang baik dan stabil di sekitar nilai 18.
-   - **DQN-KAN (SELU) dan DQN-KAN (ReLU):** Menunjukkan reward yang baik tetapi memerlukan waktu pelatihan lebih lama dibandingkan DQN-MLP.
-   - **DQN-MLP (SELU):** Menunjukkan reward yang kurang stabil dengan fluktuasi signifikan.
+1. **Reward Performance:**
+   - **DQN-MLP (ReLU):** Showed good and stable rewards around the value 18.
+   - **DQN-KAN (SELU) and DQN-KAN (ReLU):** Showed good rewards but required longer training time than DQN-MLP.
+   - **DQN-MLP (SELU):** Showed less stable rewards with significant fluctuations.
 
-2. **Waktu Pelatihan:**
-   - **DQN-MLP (ReLU) dan DQN-MLP (SELU):** Memerlukan waktu pelatihan lebih singkat dibandingkan dengan DQN-KAN.
-   - **DQN-KAN (ReLU dan SELU):** Memerlukan waktu pelatihan lebih lama tetapi menunjukkan hasil yang lebih stabil.
+2. **Training Time:**
+   - **DQN-MLP (ReLU) and DQN-MLP (SELU):** Required shorter training time than DQN-KAN.
+   - **DQN-KAN (ReLU and SELU):** Required longer training time but showed more stable results.
 
-3. **Ukuran Model:**
-   - **DQN-KAN:** Ukuran model jauh lebih besar (~61.8 MB) dibandingkan dengan DQN-MLP (~6 MB).
+3. **Model Size:**
+   - **DQN-KAN:** Model size is much larger (~61.8 MB) compared to DQN-MLP (~6 MB).
 
-   Ukuran model yang lebih besar pada DQN-KAN memberikan kemampuan pemodelan yang lebih kompleks tetapi membutuhkan sumber daya komputasi yang lebih besar.
+   The larger model size of DQN-KAN provides more complex modeling capabilities but requires greater computational resources.
 
-4. **Stabilitas Loss:**
-   - Semua model menunjukkan penurunan nilai loss yang cepat pada tahap awal pelatihan dan stabil pada nilai rendah setelah frame 200.000.
-   - **DQN-MLP (SELU):** Menunjukkan peningkatan loss signifikan pada beberapa titik, menunjukkan adanya instabilitas.
+4. **Loss Stability:**
+   - All models showed a rapid decrease in loss values in the early stages of training and stabilized at low values after 200,000 frames.
+   - **DQN-MLP (SELU):** Showed significant loss increases at certain points, indicating instability.
 
-5. **Kesimpulan:**
-   - **DQN-MLP (ReLU):** Pilihan yang efisien dengan waktu pelatihan lebih singkat dan ukuran model lebih kecil, menunjukkan performa reward yang baik dan stabil.
-   - **DQN-KAN (ReLU dan SELU):** Meski memerlukan waktu pelatihan lebih lama dan ukuran model lebih besar, memberikan hasil reward yang baik dan stabil dengan biaya komputasi lebih tinggi.
-   - **DQN-MLP (SELU):** Menunjukkan reward yang kurang stabil dan fluktuatif, mungkin kurang cocok untuk tugas ini dibandingkan dengan konfigurasi lainnya.
+5. **Conclusion:**
+   - **DQN-MLP (ReLU):** An efficient choice with shorter training time and smaller model size, showing good and stable reward performance.
+   - **DQN-KAN (ReLU and SELU):** Although requiring longer training time and larger model size, provided good and stable reward results with higher computational costs.
+   - **DQN-MLP (SELU):** Showed less stable and fluctuating rewards, indicating it may be less suitable for this task than other configurations.
 
-Perbandingan ini menunjukkan adanya trade-off antara kompleksitas model, waktu pelatihan, dan performa yang dihasilkan. Pemilihan model yang tepat bergantung pada kebutuhan spesifik aplikasi dan sumber daya yang tersedia.
+This comparison demonstrates the trade-off between model complexity, training time, and the performance achieved. The right model choice depends on the specific application needs and available resources.
 
-**Buat Pengetahuan Bersama:**
-Mengapa waktu training dan size model kombinasi KAN lebih besar? Karena arsitektur KAN menggunakan fungsi aktivasi tepi yang dapat dipelajari dan disesuaikan selama pelatihan, berbeda dengan MLP yang memiliki fungsi aktivasi tetap dan tidak dapat dipelajari.
+**For General Knowledge:**
+Why are the training time and model size larger for the KAN combination? The KAN architecture uses edge activation functions that can be learned and adjusted during training, unlike MLP, which has fixed activation functions that cannot be learned.
