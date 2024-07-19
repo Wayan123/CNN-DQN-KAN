@@ -18,6 +18,10 @@ Hasil plotting training:
 
 ![Deskripsi gambar](images/4.png)
 
+Hasil gif
+
+![Deskripsi gambar](images/1.png)
+
 ## Analisis Perbandingan
 
 Note: Semua model hanya ditraining 1x dan pada model CNN DQN - MLP (SELU) ditraing 2x karena ingin memastikan apakah ada perubahan performa. Dan, untuk fungsi aktivasi SELU tanpa menggunakan inisialisasi LeCun (LeCun initialization). Hasil ini cuma buat gabut saja bukan eksperimen serius :D
